@@ -1,0 +1,15 @@
+/* Reset CSS  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-header{
+    background-color: #000000;
+    color: white;
+    display: flex; /* this puts the child elements side by side */
+    justify-content: space-between; /* Pushes first item to start, last item to end */
+    align-items: center; /* this centers them vertically */
+    height: 200px;
+}
