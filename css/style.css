@@ -1,90 +1,215 @@
-/* Reset CSS  */
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 .main-header{
+    height: 70px;
     background-color: #000000;
-    color: white;
-    display: flex; /* this puts the child elements side by side */
-    justify-content: space-between; /* Pushes first item to start, last item to end */
-    align-items: center; /* this centers them vertically */
-    height: 200px;
-    padding: 0 150px; /* Adds some horizontal padding */
-    font-family: 'Arial', sans-serif;
-    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 50px;
 }
-.brand-logo{
-    color: white;
+
+a{
     text-decoration: none;
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
+    color: white;
 }
 
 .nav-links{
     display: flex;
-    gap: 50px; /* space between links */
+    gap: 25px;
 }
 
 .btn{
-    text-decoration: none;
-    color: white;
-    background-color: rgb(37, 36, 36);
-    font-family: sans-serif;
-    /* Button-like appearance */
-    padding: 20px 35px;
-    border: 2px solid white; /* invisible border to keep size constant */
-    border-radius: 17px;
+    border: 1px solid white;
+    padding: 5px 20px 7px;
+    border-radius: 5px;
+    background-color: rgb(44, 43, 43);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 200;
+    
 }
+
 .btn-primary{
-    background-color: #4C5FD5; /* bright color for primary action */
-    border: 2px solid transparent;
+    border: 1px solid transparent;
+    padding: 6px 15px;
+    border-radius: 5px;
+    background-color: #4C5FD5;
 }
 
 .hero-section{
-    background-color:#dadbf1;
-    height: 1500px;
-   display: flex;
-   flex-direction: column;
+    height: 350px;
+    background-color: #dadbf1;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 100px;
-    
+    gap: 20px;
 }
+
 .hero-section h1{
-    font-family: 'Arial', sans-serif;
-    font-size: 14rem;
-    margin-bottom: 30px;  /* Push the search bar down */
-    letter-spacing: -1px;
+    font-size: 4.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+.searchbar{
+  width: 500px;
+  position: relative;
 }
 
 .search-input{
     width: 100%;
-    height: 200px;
-    padding: 30px 50px;
-    font-size: 4rem;
+    height: 40px;
+    padding: 5px 15px;
+    border-radius:4px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border: 1px solid #000;
-    /* The Shadow (x-offset, y-offset, blur, color) */
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-    border-radius: 20px;
 }
 
-.search-wrapper {
-    position: relative; /* This makes it the "anchor" for the arrow */
-    width: 2400px;       /* The wrapper controls the width now */
+
+.search-arrow{
+    position: absolute;
+    right: 10px;
+    top: 25%;
+    
+    
 }
 
-.search-arrow {
-    position: absolute; /* Unlock it from the normal flow */
-    right: 50px;        /* 20px away from the right edge */
-    top: 50%;           /* Move it down 50% of the box height */
+.main-content{
+    padding: 100px 0;
+}
+
+.categories-grid{
+    display: grid;
+    /* 2. Define Columns: "1fr 1fr" means "two equal fractions" */
+    grid-template-columns: 1fr 1fr;
+
+    /* 3. Spacing */
+    gap: 60px 40px; /* 60px between rows, 40px between columns */
+
+    /* 4. Constrain the width */
+    max-width: 1000px; /* Don't let it stretch too wide on big screens */
+    margin: 0 auto;    /* Center the grid itself on the page */
+    padding: 0 20px;   /* Safety padding for mobile screens */
+}
+
+.card{
+    display: flex;
+    gap: 20px;
+    align-items: flex-start; /* Align them at the top (don't stretch the image) */
+
+}
+
+/* The Icon Image */
+.card-icon {
+    width: 80px;  /* Fixed size matches the design */
+    height: auto;
+}
+
+/* The Heading */
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px; /* Space below title */
+    font-family: sans-serif;
+}
+
+/* The Paragraph */
+.card p {
+    font-size: 1.1rem;
+    line-height: 1.4;    /* Makes the text easier to read */
+    margin-bottom: 15px; /* Space below paragraph */
+    color: #333;         /* Dark grey is softer than pure black */
+    font-family: sans-serif;
+}
+
+/* The Link */
+.card-link {
+    text-decoration: none;
+    color: #6469ce;      /* The Abstract Blue again */
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.card-link:hover {
+    text-decoration: underline; /* Good UX: underline when hovering */
+}
+
+.main-footer{
+    background-color: #000000;
+    color: white;
+    padding: 50px 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+     margin: 0 auto;
+     padding: 0 30px;
+     
     
-    /* Centering Trick */
-    /* Right now, the TOP of the arrow is at 50%. We need the MIDDLE to be at 50%. */
-    transform: translateY(-50%); 
+}
+
+.footer-col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;}
+.footer-col h4{
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+.footer-col ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col h5{
+   
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+.footer-col ul li{
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.footer-logo{
+    width: 30px;
+
+}
+
+.footer-col-copyright{
+    display: flex;
+    align-items: start;
+    gap: 10px;
+}
+
+
+@media screen 
+and (max-width: 768px){
+    .categories-grid{
+        grid-template-columns: 1fr;
+    }
+    .main-header{
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 10px;
+    }
+    .nav-links{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .footer-grid{
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
     
-    font-size: 5.5rem;  /* Make the arrow big */
-    font-weight: bolder;
 }
